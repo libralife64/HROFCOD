@@ -1,87 +1,44 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_if" id="82" inline="false" x="235" y="56">
-    <value name="IF0">
-      <block type="sensor_button" id="83">
-        <field name="OBJECT">DOWN</field>
-      </block>
-    </value>
-    <statement name="DO0">
-      <block type="movement_reverse" id="93"></block>
-    </statement>
+  <block type="oled_cleardisplay" id="1" x="233" y="166">
     <next>
-      <block type="controls_if" id="77" inline="false">
-        <value name="IF0">
-          <block type="sensor_button" id="78">
-            <field name="OBJECT">LEFT</field>
+      <block type="oled_setcursor" id="37" inline="true">
+        <value name="STARTX">
+          <block type="math_number" id="51">
+            <field name="NUM">50</field>
           </block>
         </value>
-        <statement name="DO0">
-          <block type="movement_left" id="129"></block>
-        </statement>
+        <value name="STARTY">
+          <block type="math_number" id="52">
+            <field name="NUM">30</field>
+          </block>
+        </value>
         <next>
-          <block type="controls_if" id="12" inline="false">
-            <value name="IF0">
-              <block type="sensor_button" id="76">
-                <field name="OBJECT">RIGHT</field>
-              </block>
-            </value>
-            <statement name="DO0">
-              <block type="movement_right" id="139"></block>
-            </statement>
+          <block type="oled_drawtext" id="2">
+            <field name="TEXT">hi</field>
             <next>
-              <block type="controls_if" id="15" inline="false">
-                <value name="IF0">
-                  <block type="sensor_button" id="75">
-                    <field name="OBJECT">UP</field>
-                  </block>
-                </value>
-                <statement name="DO0">
-                  <block type="movement_forward" id="119"></block>
-                </statement>
+              <block type="oled_color" id="3">
+                <field name="OBJECT">BLACK</field>
                 <next>
-                  <block type="controls_if" id="140" inline="false">
-                    <value name="IF0">
-                      <block type="sensor_button" id="141">
-                        <field name="OBJECT">ENTER</field>
+                  <block type="led_select" id="61" inline="true">
+                    <field name="ACTION">ON</field>
+                    <value name="LED">
+                      <block type="math_number" id="62">
+                        <field name="NUM">5</field>
                       </block>
                     </value>
-                    <statement name="DO0">
-                      <block type="movement_stop" id="152"></block>
-                    </statement>
                     <next>
-                      <block type="oled_cleardisplay" id="1">
+                      <block type="movement_forward" id="176">
                         <next>
-                          <block type="oled_setcursor" id="37" inline="true">
-                            <value name="STARTX">
-                              <block type="math_number" id="51">
-                                <field name="NUM">50</field>
+                          <block type="controls_whileUntil" id="192" inline="false">
+                            <field name="MODE">UNTIL</field>
+                            <value name="NUMBER">
+                              <block type="sensor_button" id="141">
+                                <field name="OBJECT">ENTER</field>
                               </block>
                             </value>
-                            <value name="STARTY">
-                              <block type="math_number" id="52">
-                                <field name="NUM">30</field>
-                              </block>
-                            </value>
-                            <next>
-                              <block type="oled_drawtext" id="2">
-                                <field name="TEXT">hi</field>
-                                <next>
-                                  <block type="oled_color" id="3">
-                                    <field name="OBJECT">BLACK</field>
-                                    <next>
-                                      <block type="led_select" id="61" inline="true">
-                                        <field name="ACTION">ON</field>
-                                        <value name="LED">
-                                          <block type="math_number" id="62">
-                                            <field name="NUM">5</field>
-                                          </block>
-                                        </value>
-                                      </block>
-                                    </next>
-                                  </block>
-                                </next>
-                              </block>
-                            </next>
+                            <statement name="DO">
+                              <block type="movement_stop" id="203"></block>
+                            </statement>
                           </block>
                         </next>
                       </block>
