@@ -43,6 +43,33 @@
                     <statement name="DO0">
                       <block type="movement_left" id="455"></block>
                     </statement>
+                    <next>
+                      <block type="controls_if" id="456" inline="false">
+                        <value name="IF0">
+                          <block type="sensor_object" id="457">
+                            <field name="OBJECT">LEFTFRONT</field>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="movement_reverse" id="489"></block>
+                        </statement>
+                        <next>
+                          <block type="controls_if" id="462" inline="false">
+                            <value name="IF0">
+                              <block type="sensor_object" id="463">
+                                <field name="OBJECT">RIGHTFRONT</field>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="movement_reverse" id="490"></block>
+                            </statement>
+                            <next>
+                              <block type="movement_stop" id="500"></block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
                   </block>
                 </next>
               </block>
