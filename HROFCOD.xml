@@ -2,69 +2,74 @@
   <block type="oled_cleardisplay" id="388" x="-20" y="179">
     <next>
       <block type="oled_drawtext" id="406">
-        <field name="TEXT">i like pie</field>
+        <field name="TEXT">hi</field>
         <next>
-          <block type="controls_repeat" id="340" inline="true">
-            <value name="TIMES">
-              <block type="math_number" id="347">
-                <field name="NUM">5</field>
-              </block>
-            </value>
-            <statement name="DO">
-              <block type="movement_forward" id="1">
-                <next>
-                  <block type="robot_delay" id="295" inline="true">
-                    <value name="DELAY">
-                      <block type="math_number" id="308">
-                        <field name="NUM">5000</field>
-                      </block>
-                    </value>
-                  </block>
-                </next>
-              </block>
-            </statement>
+          <block type="oled_color" id="509">
+            <field name="OBJECT">BLACK</field>
             <next>
-              <block type="controls_if" id="367" inline="false">
-                <value name="IF0">
-                  <block type="sensor_object" id="354">
-                    <field name="OBJECT">LEFTSIDE</field>
+              <block type="controls_repeat" id="340" inline="true">
+                <value name="TIMES">
+                  <block type="math_number" id="347">
+                    <field name="NUM">5</field>
                   </block>
                 </value>
-                <statement name="DO0">
-                  <block type="movement_right" id="430"></block>
+                <statement name="DO">
+                  <block type="movement_forward" id="1">
+                    <next>
+                      <block type="robot_delay" id="295" inline="true">
+                        <value name="DELAY">
+                          <block type="math_number" id="308">
+                            <field name="NUM">5000</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
                 </statement>
                 <next>
-                  <block type="controls_if" id="443" inline="false">
+                  <block type="controls_if" id="367" inline="false">
                     <value name="IF0">
-                      <block type="sensor_object" id="444">
-                        <field name="OBJECT">RIGHTSIDE</field>
+                      <block type="sensor_object" id="354">
+                        <field name="OBJECT">LEFTSIDE</field>
                       </block>
                     </value>
                     <statement name="DO0">
-                      <block type="movement_left" id="455"></block>
+                      <block type="movement_right" id="430"></block>
                     </statement>
                     <next>
-                      <block type="controls_if" id="456" inline="false">
+                      <block type="controls_if" id="443" inline="false">
                         <value name="IF0">
-                          <block type="sensor_object" id="457">
-                            <field name="OBJECT">LEFTFRONT</field>
+                          <block type="sensor_object" id="444">
+                            <field name="OBJECT">RIGHTSIDE</field>
                           </block>
                         </value>
                         <statement name="DO0">
-                          <block type="movement_reverse" id="489"></block>
+                          <block type="movement_left" id="455"></block>
                         </statement>
                         <next>
-                          <block type="controls_if" id="462" inline="false">
+                          <block type="controls_if" id="456" inline="false">
                             <value name="IF0">
-                              <block type="sensor_object" id="463">
-                                <field name="OBJECT">RIGHTFRONT</field>
+                              <block type="sensor_object" id="457">
+                                <field name="OBJECT">LEFTFRONT</field>
                               </block>
                             </value>
                             <statement name="DO0">
-                              <block type="movement_reverse" id="490"></block>
+                              <block type="movement_reverse" id="489"></block>
                             </statement>
                             <next>
-                              <block type="movement_stop" id="500"></block>
+                              <block type="controls_if" id="462" inline="false">
+                                <value name="IF0">
+                                  <block type="sensor_object" id="463">
+                                    <field name="OBJECT">RIGHTFRONT</field>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="movement_reverse" id="490"></block>
+                                </statement>
+                                <next>
+                                  <block type="movement_stop" id="500"></block>
+                                </next>
+                              </block>
                             </next>
                           </block>
                         </next>
