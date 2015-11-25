@@ -1,38 +1,38 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="controls_repeat" id="340" inline="true" x="-30" y="-12">
-    <value name="TIMES">
-      <block type="math_number" id="347">
-        <field name="NUM">5</field>
-      </block>
-    </value>
-    <statement name="DO">
-      <block type="movement_forward" id="1">
+  <block type="oled_cleardisplay" id="388" x="-20" y="179">
+    <next>
+      <block type="oled_drawtext" id="406">
+        <field name="TEXT">i like pie</field>
         <next>
-          <block type="robot_delay" id="295" inline="true">
-            <value name="DELAY">
-              <block type="math_number" id="308">
-                <field name="NUM">5000</field>
+          <block type="controls_repeat" id="340" inline="true">
+            <value name="TIMES">
+              <block type="math_number" id="347">
+                <field name="NUM">5</field>
               </block>
             </value>
-          </block>
-        </next>
-      </block>
-    </statement>
-    <next>
-      <block type="controls_if" id="367" inline="false">
-        <value name="IF0">
-          <block type="sensor_object" id="354">
-            <field name="OBJECT">LEFTSIDE</field>
-          </block>
-        </value>
-        <statement name="DO0">
-          <block type="movement_right" id="430"></block>
-        </statement>
-        <next>
-          <block type="oled_cleardisplay" id="388">
+            <statement name="DO">
+              <block type="movement_forward" id="1">
+                <next>
+                  <block type="robot_delay" id="295" inline="true">
+                    <value name="DELAY">
+                      <block type="math_number" id="308">
+                        <field name="NUM">5000</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
             <next>
-              <block type="oled_drawtext" id="406">
-                <field name="TEXT">i like pie</field>
+              <block type="controls_if" id="367" inline="false">
+                <value name="IF0">
+                  <block type="sensor_object" id="354">
+                    <field name="OBJECT">LEFTSIDE</field>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="movement_right" id="430"></block>
+                </statement>
                 <next>
                   <block type="controls_if" id="443" inline="false">
                     <value name="IF0">
